@@ -7,8 +7,13 @@ class Calculator:
 
     def multiply(self, a, b):
         result = 0
+        negative = b < 0
+        if negative:
+            b = 0 - b 
         for i in range(b):
             result = self.add(result, a)
+        if negative:
+            result = 0 - result
         return result
 
     def divide(self, a, b):
